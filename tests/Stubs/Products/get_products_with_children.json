@@ -1,0 +1,285 @@
+{
+  "page": 1,
+  "per_page": 50,
+  "total_pages": 1,
+  "total_entries": 1,
+  "entries": [
+    {
+      "id": 1,
+      "product_type": "product",
+      "code": "shirt-a",
+      "status": "active",
+      "product_attributes": {
+        "description": {
+          "value": "test5",
+          "base_type": "html"
+        },
+        "short_description": {
+          "value": "test1",
+          "base_type": "html"
+        }
+      },
+      "name": "Shirt A updated 4",
+      "discontinued": false,
+      "children": [
+        {
+          "id": 7,
+          "product_type": "product",
+          "code": "shirt-a-white",
+          "status": "active",
+          "product_attributes": {
+            "colour": {
+              "value": "White",
+              "base_type": "string"
+            }
+          },
+          "name": "shirt-a-white",
+          "discontinued": false,
+          "children": [
+            {
+              "id": 10,
+              "product_type": "product",
+              "code": "shirt-a-white-xlarge",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "shirt-a-white-xlarge",
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 8,
+              "product_type": "product",
+              "code": "shirt-a-white-small",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "shirt-a-white-small",
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 9,
+              "product_type": "product",
+              "code": "shirt-a-white-large",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "shirt-a-white-large",
+              "discontinued": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "product_type": "product",
+          "code": "shirt-a-black",
+          "status": "active",
+          "product_attributes": {
+            "colour": {
+              "value": "black",
+              "base_type": "string"
+            }
+          },
+          "name": "Shirt A Black updated 2",
+          "discontinued": false,
+          "children": [
+            {
+              "id": 11,
+              "product_type": "product",
+              "code": "shirt-a-black-xlarge",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "shirt-a-black-xlarge",
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 3,
+              "product_type": "product",
+              "code": "shirt-a-black-small",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "Small",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "Shirt A Black Small updated 1",
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 6,
+              "product_type": "product",
+              "code": "shirt-a-black-large",
+              "status": "inactive",
+              "product_attributes": {
+                "ean": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "gtin": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "hero": {
+                  "value": false,
+                  "base_type": "boolean"
+                },
+                "isbn": {
+                  "value": "",
+                  "base_type": "string"
+                },
+                "size": {
+                  "value": "Large",
+                  "base_type": "string"
+                },
+                "upca": {
+                  "value": "",
+                  "base_type": "string"
+                }
+              },
+              "name": "shirt-a-black-large",
+              "discontinued": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "product_type": "product",
+          "code": "shirt-a-orange",
+          "status": "active",
+          "product_attributes": {
+            "colour": {
+              "value": "Orange",
+              "base_type": "string"
+            }
+          },
+          "name": "shirt-a-orange",
+          "discontinued": false,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
