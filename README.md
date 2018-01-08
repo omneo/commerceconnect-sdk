@@ -104,7 +104,7 @@ public function anyMethod() {
 
 ## Available methods
 
-Coming soon.
+Coming soon..
 
 ## Contributing
 
