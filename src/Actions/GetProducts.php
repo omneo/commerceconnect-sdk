@@ -3,6 +3,7 @@
 namespace Arkade\CommerceConnect\Actions;
 
 use Arkade\CommerceConnect\Parsers\PayloadParser;
+use Arkade\CommerceConnect\Parsers\ProductsParser;
 use GuzzleHttp;
 use Arkade\CommerceConnect\Contracts;
 use Illuminate\Support\Collection;
@@ -90,10 +91,10 @@ class GetProducts extends BaseAction implements Contracts\Action
      */
     public function request(array $options = [])
     {
-        $request = new GuzzleHttp\Psr7\Request('GET', '/products');
+        $request = new GuzzleHttp\Psr7\Request('GET', '/api/v2/products');
 
         return $request->withUri($request->getUri()->withQuery(http_build_query(
-            $this->mapParameters($options)
+            $this->mapParameters()
         )));
     }
 
@@ -105,15 +106,7 @@ class GetProducts extends BaseAction implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        $data = (new PayloadParser)->parse((string)$response->getBody());
-
-        $collection = new Collection;
-
-        foreach ($data->ProductSimple as $product) {
-            $collection->push((new Parsers\ProductSimpleParser)->parse($product));
-        }
-
-        return $collection;
+        return (new ProductsParser())->parse((string)$response->getBody());
     }
 
     private function mapParameters()

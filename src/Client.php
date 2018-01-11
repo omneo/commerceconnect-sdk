@@ -49,9 +49,11 @@ class Client
      *
      * @param string $base_url
      */
-    public function __construct($base_url)
+    public function __construct($base_url, $email, $token)
     {
         $this->base_url = $base_url;
+        $this->email    = $email;
+        $this->token    = $token;
 
         $this->setupClient();
     }
@@ -80,21 +82,6 @@ class Client
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Set username and password.
-     *
-     * @param  string $email
-     * @param  string $token
-     * @return Client
-     */
-    public function setCredentials($email, $token)
-    {
-        $this->email = $email;
-        $this->token = $token;
-
-        return $this;
     }
 
     /**
@@ -134,13 +121,10 @@ class Client
     {
         // Set and override any prevent set Authorization header
         $options['headers'] = [
-            'Authorization' => 'Token token='.$this->token.',email='.$this->email
+            'Authorization' => 'Token token=' . $this->token . ',email=' . $this->email
         ];
 
         $stack = $stack ?: GuzzleHttp\HandlerStack::create();
-
-        $this->bindHeadersMiddleware($stack);
-        $this->bindCountryCodeMiddleware($stack);
 
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
@@ -198,37 +182,4 @@ class Client
         return $e;
     }
 
-    /**
-     * Bind outgoing request middleware for headers.
-     *
-     * @param  GuzzleHttp\HandlerStack $stack
-     * @return void
-     */
-    protected function bindHeadersMiddleware(GuzzleHttp\HandlerStack $stack)
-    {
-        $stack->push(GuzzleHttp\Middleware::mapRequest(function (RequestInterface $request) {
-            return $request
-                ->withHeader('Accept', 'version_2.0')
-                ->withHeader('Content-type', 'text/xml');
-        }));
-    }
-
-    /**
-     * Bind outgoing country code middleware.
-     *
-     * @param  GuzzleHttp\HandlerStack $stack
-     * @return void
-     */
-    protected function bindCountryCodeMiddleware(GuzzleHttp\HandlerStack $stack)
-    {
-        $stack->push(GuzzleHttp\Middleware::mapRequest(function (RequestInterface $request) {
-            if (!$this->countryCode) {
-                throw new \DomainException('Requests cannot be sent without setting a country code on the client.');
-            }
-
-            return $request->withUri(
-                GuzzleHttp\Psr7\Uri::withQueryValue($request->getUri(), 'CountryCode', $this->countryCode)
-            );
-        }));
-    }
 }

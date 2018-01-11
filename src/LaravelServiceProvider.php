@@ -17,8 +17,8 @@ class LaravelServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Client::class, function ($app)
         {
-            $client = new Client(config('services.commerceconnect.base_url'));
-            $client->setCredentials(
+            $client = new Client(
+                config('services.commerceconnect.base_url'),
                 config('services.commerceconnect.email'),
                 config('services.commerceconnect.token')
             );
