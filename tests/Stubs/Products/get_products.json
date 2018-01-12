@@ -1,0 +1,466 @@
+{
+  "page": 1,
+  "per_page": 1,
+  "total_pages": 1,
+  "total_entries": 6008,
+  "entries": [
+    {
+      "id": 41884,
+      "product_type": "product",
+      "code": "SH002W15",
+      "status": "active",
+      "product_attributes": {
+        "ap21_cuff": {
+          "value": null,
+          "base_type": "single_option"
+        },
+        "ap21_collar": {
+          "value": null,
+          "base_type": "single_option"
+        },
+        "ap21_season": {
+          "value": "Winter15",
+          "base_type": "single_option"
+        },
+        "description": {
+          "value": "RC#101 - BLUE\nFit: Slim\nCollar: Oxford\nCuff: 2BC\nOxford Check fabric",
+          "base_type": "html"
+        },
+        "new_arrival": {
+          "value": "",
+          "base_type": "datetime"
+        },
+        "ap21_prod_cat": {
+          "value": "Shirts",
+          "base_type": "single_option"
+        },
+        "ap21_prod_fit": {
+          "value": "Slim",
+          "base_type": "single_option"
+        },
+        "ap21_styleidx": {
+          "value": 5523,
+          "base_type": "number"
+        },
+        "ap21_brand_fam": {
+          "value": "M.J. Bale",
+          "base_type": "single_option"
+        },
+        "ap21_fabr_type": {
+          "value": null,
+          "base_type": "single_option"
+        },
+        "ap21_prod_block": {
+          "value": "Oxford/2BC",
+          "base_type": "single_option"
+        },
+        "ap21_prod_label": {
+          "value": "Blue",
+          "base_type": "single_option"
+        },
+        "ap21_prod_usage": {
+          "value": "Business",
+          "base_type": "single_option"
+        },
+        "ap21_composition": {
+          "value": "100% Cotton",
+          "base_type": "single_option"
+        },
+        "ap21_prod_constr": {
+          "value": "Oxford",
+          "base_type": "single_option"
+        },
+        "ap21_prod_stktype": {
+          "value": "Product",
+          "base_type": "single_option"
+        },
+        "ap21_prod_sub_cat": {
+          "value": "Item",
+          "base_type": "single_option"
+        },
+        "country_of_origin": {
+          "value": "Vietnam",
+          "base_type": "string"
+        },
+        "short_description": {
+          "value": "\u003cp\u003eFit: Slim Fit\u003cbr /\u003e\r\nCollar: Oxford\u003cbr /\u003e\r\nMaterial: 100% Cotton\u003cbr /\u003e\r\nCare: Gentle Machine Wash\u003c/p\u003e",
+          "base_type": "html"
+        },
+        "ap21_prod_sub_category": {
+          "value": "Item",
+          "base_type": "single_option"
+        },
+        "exclude_from_multi_buy": {
+          "value": false,
+          "base_type": "boolean"
+        }
+      },
+      "name": "Perkins Blue Shirt",
+      "class_type": null,
+      "discontinued": false,
+      "children": [
+        {
+          "id": 41885,
+          "product_type": "product",
+          "code": "SH002W15-Blue",
+          "status": "active",
+          "product_attributes": {
+            "ap21_clridx": {
+              "value": 10149,
+              "base_type": "number"
+            },
+            "ap21_sequence": {
+              "value": "1",
+              "base_type": "single_option"
+            },
+            "ap21_type_code": {
+              "value": "Blue",
+              "base_type": "single_option"
+            },
+            "ap21_type_name": {
+              "value": "Blue",
+              "base_type": "single_option"
+            },
+            "ap21_colour_code": {
+              "value": "Blue",
+              "base_type": "single_option"
+            },
+            "ap21_colour_name": {
+              "value": "Blue",
+              "base_type": "single_option"
+            },
+            "ap21_colour_family": {
+              "value": "Blue",
+              "base_type": "string"
+            }
+          },
+          "name": "Perkins Blue Shirt-Blue",
+          "class_type": null,
+          "discontinued": false,
+          "children": [
+            {
+              "id": 41895,
+              "product_type": "product",
+              "code": "SH002W15-Blue-40",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279598",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28274,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "5",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "40",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "40",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-40",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41894,
+              "product_type": "product",
+              "code": "SH002W15-Blue-36",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743500111",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 33319,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "1",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "36",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "36",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-36",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41893,
+              "product_type": "product",
+              "code": "SH002W15-Blue-38",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279574",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28281,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "3",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "38",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "38",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-38",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41892,
+              "product_type": "product",
+              "code": "SH002W15-Blue-39",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279581",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28273,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "4",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "39",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "39",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-39",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41891,
+              "product_type": "product",
+              "code": "SH002W15-Blue-37",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279567",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28280,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "2",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "37",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "37",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-37",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41890,
+              "product_type": "product",
+              "code": "SH002W15-Blue-46",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279642",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28279,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "11",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "46",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "46",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-46",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41889,
+              "product_type": "product",
+              "code": "SH002W15-Blue-44",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279635",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28278,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "9",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "44",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "44",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-44",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41888,
+              "product_type": "product",
+              "code": "SH002W15-Blue-41",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279604",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28275,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "6",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "41",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "41",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-41",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41887,
+              "product_type": "product",
+              "code": "SH002W15-Blue-43",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279628",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28277,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "8",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "43",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "43",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-43",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            },
+            {
+              "id": 41886,
+              "product_type": "product",
+              "code": "SH002W15-Blue-42",
+              "status": "active",
+              "product_attributes": {
+                "ean": {
+                  "value": "9342743279611",
+                  "base_type": "string"
+                },
+                "ap21_skuidx": {
+                  "value": 28276,
+                  "base_type": "number"
+                },
+                "ap21_sequence": {
+                  "value": "7",
+                  "base_type": "single_option"
+                },
+                "ap21_size_code": {
+                  "value": "42",
+                  "base_type": "single_option"
+                },
+                "dw_sorted_size": {
+                  "value": "42",
+                  "base_type": "single_option"
+                }
+              },
+              "name": "Perkins Blue Shirt-Blue-42",
+              "class_type": null,
+              "discontinued": false,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

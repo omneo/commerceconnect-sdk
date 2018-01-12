@@ -47,7 +47,7 @@ class Product {
     public $status;
 
     /**
-     * @var string
+     * @var Collection
      */
     public $attributes;
 

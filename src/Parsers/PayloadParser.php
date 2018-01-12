@@ -5,7 +5,7 @@ namespace Arkade\CommerceConnect\Parsers;
 class PayloadParser
 {
     /**
-     * Parse the given JSON payload to a SimpleXmlElement.
+     * Parse the given JSON payload to an array.
      *
      * @param  string $payload
      * @return array|null

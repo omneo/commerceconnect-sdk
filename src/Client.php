@@ -5,7 +5,6 @@ namespace Arkade\CommerceConnect;
 use Exception;
 use GuzzleHttp;
 use Illuminate\Support\Collection;
-use Psr\Http\Message\RequestInterface;
 
 class Client
 {
@@ -40,7 +39,7 @@ class Client
     /**
      * Stream resource for debug output.
      *
-     * @var resource
+     * @var resource|bool
      */
     protected $debug;
 
@@ -48,6 +47,8 @@ class Client
      * Client constructor.
      *
      * @param string $base_url
+     * @param $email
+     * @param $token
      */
     public function __construct($base_url, $email, $token)
     {
@@ -91,7 +92,7 @@ class Client
      */
     public function debug()
     {
-        $this->debug = fopen('php://temp', 'r+');
+        $this->debug = fopen('php://temp', 'rb+') ?: false;
     }
 
     /**
@@ -117,7 +118,7 @@ class Client
      * @param  array $options
      * @return Client
      */
-    public function setupClient(GuzzleHttp\HandlerStack $stack = null, $options = [])
+    public function setupClient(GuzzleHttp\HandlerStack $stack = null, array $options = [])
     {
         // Set and override any prevent set Authorization header
         $options['headers'] = [
@@ -139,8 +140,9 @@ class Client
      * Execute the given action.
      *
      * @param  Contracts\Action $action
-     * @return mixed|Collection
-     * @throws \Exception
+     * @return Collection|mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exception
      */
     public function action(Contracts\Action $action)
     {
@@ -175,7 +177,7 @@ class Client
      */
     protected function convertException(Exception $e)
     {
-        if ($e instanceof GuzzleHttp\Exception\ClientException && 404 == $e->getResponse()->getStatusCode()) {
+        if ($e instanceof GuzzleHttp\Exception\ClientException && 404 === $e->getResponse()->getStatusCode()) {
             return new Exceptions\NotFoundException;
         }
 

@@ -2,14 +2,12 @@
 
 namespace Arkade\CommerceConnect\Actions;
 
-use Arkade\CommerceConnect\Parsers\PayloadParser;
 use Arkade\CommerceConnect\Parsers\ProductsParser;
 use GuzzleHttp;
 use Arkade\CommerceConnect\Contracts;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class GetProducts extends BaseAction implements Contracts\Action
 {
@@ -86,15 +84,14 @@ class GetProducts extends BaseAction implements Contracts\Action
     /**
      * Build a PSR-7 request.
      *
-     * @param array $options
      * @return RequestInterface
      */
-    public function request(array $options = [])
+    public function request()
     {
         $request = new GuzzleHttp\Psr7\Request('GET', '/api/v2/products');
 
         return $request->withUri($request->getUri()->withQuery(http_build_query(
-            $this->mapParameters()
+            $this->queryParameters()
         )));
     }
 
@@ -102,14 +99,17 @@ class GetProducts extends BaseAction implements Contracts\Action
      * Transform a PSR-7 response.
      *
      * @param  ResponseInterface $response
-     * @return LengthAwarePaginator|Collection
+     * @return Collection
      */
     public function response(ResponseInterface $response)
     {
         return (new ProductsParser())->parse((string)$response->getBody());
     }
 
-    private function mapParameters()
+    /**
+     * @return array
+     */
+    private function queryParameters()
     {
         return array_filter([
             'per_page'                   => $this->per_page,
