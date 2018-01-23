@@ -94,6 +94,11 @@ class Product {
     /**
      * @var string
      */
+    public $sale_price_effective_till;
+
+    /**
+     * @var string
+     */
     public $gtin;
 
     /**
