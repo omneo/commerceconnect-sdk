@@ -24,12 +24,16 @@ class ProductsParser
     /**
      * Parse the given JSON payload to a SimpleXmlElement.
      *
-     * @param  string $payload
+     * @param string $payload
+     * @param Action the caller action class
      * @return Collection
      */
-    public function parse($payload)
+    public function parse($payload, $action)
     {
         $data = (new PayloadParser)->parse($payload);
+
+        $action->total_pages = $data['total_pages'];
+        $action->total_entries = $data['total_entries'];
 
         /** @var array|null $products */
         if ($products = array_get($data, 'entries')) {

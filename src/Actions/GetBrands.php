@@ -22,6 +22,16 @@ class GetBrands extends BaseAction implements Contracts\Action
     public $page;
 
     /**
+     * @var int
+     */
+    public $total_pages;
+
+    /**
+     * @var int
+     */
+    public $total_entries;
+
+    /**
      * Build a PSR-7 request.
      *
      * @return RequestInterface
@@ -43,7 +53,7 @@ class GetBrands extends BaseAction implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        return (new BrandsParser())->parse((string)$response->getBody());
+        return (new BrandsParser())->parse((string)$response->getBody(), $this);
     }
 
     /**

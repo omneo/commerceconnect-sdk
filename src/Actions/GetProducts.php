@@ -22,6 +22,16 @@ class GetProducts extends BaseAction implements Contracts\Action
     public $page;
 
     /**
+     * @var int
+     */
+    public $total_pages;
+
+    /**
+     * @var int
+     */
+    public $total_entries;
+
+    /**
      * ISO_8601 format 2016-05-30T05:13:26Z
      *
      * @var string
@@ -103,7 +113,7 @@ class GetProducts extends BaseAction implements Contracts\Action
      */
     public function response(ResponseInterface $response)
     {
-        return (new ProductsParser())->parse((string)$response->getBody());
+        return (new ProductsParser())->parse((string)$response->getBody(), $this);
     }
 
     /**
