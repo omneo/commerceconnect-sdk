@@ -55,7 +55,7 @@ class ProductsParser
             'id'                        => array_get($data, 'id'),
             'parent_id'                 => $parent_id,
             'title'                     => array_get($data, 'title'),
-            'description'               => array_get($data, 'product_attributes.description'),
+            'description'               => array_get($data, 'product_attributes.description.value'),
             'product_type'              => array_get($data, 'product_type'),
             'class_type'                => array_get($data, 'class_type'),
             'code'                      => array_get($data, 'code'),
