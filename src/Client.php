@@ -265,20 +265,6 @@ class Client
     }
 
     /**
-     * Bind logging middleware.
-     *
-     * @param  GuzzleHttp\HandlerStack $stack
-     * @return void
-     */
-    protected function bindLoggingMiddleware(GuzzleHttp\HandlerStack $stack)
-    {
-        $stack->push(Middleware::log(
-            $this->logger,
-            new MessageFormatter('{request} - {response}')
-        ));
-    }
-
-    /**
      * Convert the provided exception.
      *
      * @param  Exception $e
@@ -291,6 +277,20 @@ class Client
         }
 
         return $e;
+    }
+
+    /**
+     * Bind logging middleware.
+     *
+     * @param  GuzzleHttp\HandlerStack $stack
+     * @return void
+     */
+    protected function bindLoggingMiddleware(GuzzleHttp\HandlerStack $stack)
+    {
+        $stack->push(Middleware::log(
+            $this->logger,
+            new MessageFormatter('{request} - {response}')
+        ));
     }
 
 }
