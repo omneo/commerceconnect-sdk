@@ -7,8 +7,6 @@ use GuzzleHttp;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\MessageFormatter;
 use Illuminate\Support\Collection;
-use Illuminate\Log\Writer;
-use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 
 class Client
