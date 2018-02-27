@@ -71,12 +71,6 @@ class Client
 
     /**
      * Client constructor.
-     *
-     * @param string $base_url
-     * @param $email
-     * @param $token
-     * @param LoggerInterface $logger
-     * @param bool $log
      */
     public function __construct()
     {
