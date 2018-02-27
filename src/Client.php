@@ -4,7 +4,12 @@ namespace Arkade\CommerceConnect;
 
 use Exception;
 use GuzzleHttp;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\MessageFormatter;
 use Illuminate\Support\Collection;
+use Illuminate\Log\Writer;
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 class Client
 {
@@ -37,11 +42,32 @@ class Client
     protected $client;
 
     /**
-     * Stream resource for debug output.
+     * Enable logging of guzzle requests / responses
      *
-     * @var resource|bool
+     * @var bool
      */
-    protected $debug;
+    protected $logging = false;
+
+    /**
+     * PSR-3 logger
+     *
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    /**
+     * Verify peer SSL
+     *
+     * @var bool
+     */
+    protected $verifyPeer = true;
+
+    /**
+     * Set connection timeout
+     *
+     * @var int
+     */
+    protected $timeout = 900;
 
     /**
      * Client constructor.
@@ -49,24 +75,30 @@ class Client
      * @param string $base_url
      * @param $email
      * @param $token
+     * @param LoggerInterface $logger
+     * @param bool $log
      */
-    public function __construct($base_url, $email, $token)
+    public function __construct()
     {
-        $this->base_url = $base_url;
-        $this->email    = $email;
-        $this->token    = $token;
-
         $this->setupClient();
     }
 
     /**
-     * Return base URL for REST API.
-     *
      * @return string
      */
     public function getBaseUrl()
     {
         return $this->base_url;
+    }
+
+    /**
+     * @param string $base_url
+     * @return Client
+     */
+    public function setBaseUrl($base_url)
+    {
+        $this->base_url = $base_url;
+        return $this;
     }
 
     /**
@@ -78,6 +110,16 @@ class Client
     }
 
     /**
+     * @param string $token
+     * @return Client
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getEmail()
@@ -86,29 +128,85 @@ class Client
     }
 
     /**
-     * Enable debug mode.
-     *
-     * @return void
+     * @param string $email
+     * @return Client
      */
-    public function debug()
+    public function setEmail($email)
     {
-        $this->debug = fopen('php://temp', 'rb+') ?: false;
+        $this->email = $email;
+        return $this;
     }
 
     /**
-     * Return debug output.
-     *
-     * @return string|null
+     * @return bool
      */
-    public function getDebugOutput()
+    public function getLogging()
     {
-        if (!$this->debug) {
-            return null;
-        }
+        return $this->logging;
+    }
 
-        fseek($this->debug, 0);
+    /**
+     * @param bool $logging
+     * @return Client
+     */
+    public function setLogging($logging)
+    {
+        $this->logging = $logging;
+        return $this;
+    }
 
-        return stream_get_contents($this->debug);
+    /**
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        return $this->logger;
+    }
+
+    /**
+     * @param LoggerInterface $logger
+     * @return Client
+     */
+    public function setLogger($logger)
+    {
+        $this->logger = $logger;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getVerifyPeer()
+    {
+        return $this->verifyPeer;
+    }
+
+    /**
+     * @param bool $verifyPeer
+     * @return Client
+     */
+    public function setVerifyPeer($verifyPeer)
+    {
+        $this->verifyPeer = $verifyPeer;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimeout()
+    {
+        return $this->timeout;
+    }
+
+    /**
+     * @param int $timeout
+     * @return Client
+     */
+    public function setTimeout($timeout)
+    {
+        $this->timeout = $timeout;
+        return $this;
     }
 
     /**
@@ -127,10 +225,13 @@ class Client
 
         $stack = $stack ?: GuzzleHttp\HandlerStack::create();
 
+        if($this->logging) $this->bindLoggingMiddleware($stack);
+
         $this->client = new GuzzleHttp\Client(array_merge([
             'handler'  => $stack,
-            'base_uri' => $this->base_url,
-            'timeout'  => 900, // 15 minutes
+            'base_uri' => $this->getBaseUrl(),
+            'verify' => $this->getVerifyPeer(),
+            'timeout'  => $this->getTimeout(),
         ], $options));
 
         return $this;
@@ -167,6 +268,20 @@ class Client
     public function __call($name, $arguments)
     {
         return call_user_func_array([$this->client, $name], $arguments);
+    }
+
+    /**
+     * Bind logging middleware.
+     *
+     * @param  GuzzleHttp\HandlerStack $stack
+     * @return void
+     */
+    protected function bindLoggingMiddleware(GuzzleHttp\HandlerStack $stack)
+    {
+        $stack->push(Middleware::log(
+            $this->logger,
+            new MessageFormatter('{request} - {response}')
+        ));
     }
 
     /**

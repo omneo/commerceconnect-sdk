@@ -3,6 +3,7 @@
 namespace Arkade\CommerceConnect;
 
 use GuzzleHttp;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelServiceProvider extends ServiceProvider
@@ -17,11 +18,13 @@ class LaravelServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Client::class, function ($app)
         {
-            $client = new Client(
-                config('services.commerceconnect.base_url'),
-                config('services.commerceconnect.email'),
-                config('services.commerceconnect.token')
-            );
+            $client = new Client();
+            $client->setBaseUrl(config('services.commerceconnect.base_url'));
+            $client->setEmail(config('services.commerceconnect.email'));
+            $client->setToken(config('services.commerceconnect.token'));
+            $client->setLogging(config('services.commerceconnect.logging'));
+            $client->setVerifyPeer(config('app.env') === 'production');
+            $client->setLogger(Log::getMonolog());
 
             $this->setupRecorder($client);
 
@@ -38,7 +41,7 @@ class LaravelServiceProvider extends ServiceProvider
     protected function setupRecorder(Client $client)
     {
         if (! $this->app->bound('Omneo\Plugins\HttpRecorder\Recorder')) {
-            return $client;
+            return $client->setupClient();
         }
 
         $stack = GuzzleHttp\HandlerStack::create();
