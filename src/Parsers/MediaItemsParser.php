@@ -55,6 +55,7 @@ class MediaItemsParser
             'mediaItemType'             => array_get($data, 'media_item_type'),
             'url'                       => array_get($data, 'url'),
             'sortOrder'                 => array_get($data, 'sort_order'),
+            'position'                  => array_get($data, 'position'),
             'isPrimary'                 => array_get($data, 'is_primary'),
             'isUploaded'                => array_get($data, 'is_uploaded'),
             'tagList'                   => array_get($data, 'tag_list'),

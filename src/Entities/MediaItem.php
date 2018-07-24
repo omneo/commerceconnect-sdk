@@ -37,6 +37,11 @@ class MediaItem {
     public $sortOrder;
 
     /**
+     * @var int
+     */
+    public $position;
+
+    /**
      * @var boolean
      */
     public $isPrimary;
