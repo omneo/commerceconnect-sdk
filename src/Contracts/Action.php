@@ -3,7 +3,6 @@
 namespace Arkade\CommerceConnect\Contracts;
 
 use Arkade\CommerceConnect\Client;
-use Arkade\Support\Contracts;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
